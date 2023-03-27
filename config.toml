@@ -1,0 +1,4 @@
+baseURL = 'https://funcionesquefuncionan.github.io/'
+languageCode = 'en-us'
+title = 'funciones que funcionan'
+theme = 'm10c'
