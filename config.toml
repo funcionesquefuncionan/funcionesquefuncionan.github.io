@@ -2,3 +2,16 @@ baseURL = 'https://funcionesquefuncionan.github.io/'
 languageCode = 'en-us'
 title = 'funciones que funcionan'
 theme = 'm10c'
+
+author = 'Peter Gassendi'
+
+[[params.social]]
+  icon = "twitter"
+  name = "Twitter"
+  url = "https://twitter.com/petergassendi"
+
+[[params.social]]
+  icon = "mail"
+  name = "Email"
+  url = "mailto:pgassendi@gmail.com"
+
