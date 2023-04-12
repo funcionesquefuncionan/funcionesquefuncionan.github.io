@@ -5,6 +5,11 @@ theme = 'm10c'
 
 author = 'Peter Gassendi'
 
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+
 [[params.social]]
   icon = "twitter"
   name = "Twitter"
