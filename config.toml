@@ -3,6 +3,8 @@ languageCode = 'en-us'
 title = 'funciones que funcionan'
 theme = 'm10c'
 
+enableRobotsTXT = true
+
 author = 'Peter Gassendi'
 
 [[menu.main]]
