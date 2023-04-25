@@ -22,3 +22,8 @@ author = 'Peter Gassendi'
   name = "Email"
   url = "mailto:pgassendi@gmail.com"
 
+[[params.social]]
+  icon = "rss"
+  name = "RSS"
+  url = "https://funcionesquefuncionan.github.io/index.xml"
+
