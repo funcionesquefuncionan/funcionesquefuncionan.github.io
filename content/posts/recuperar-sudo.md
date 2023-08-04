@@ -36,6 +36,19 @@ una y otra vez lo mismo). Y esto por lo menos me funcionó a mí y me da
 fiaca loguearme solo para upvotar el post específic oque me sirvió a
 mi.
 
+Por otra parte, si bien mi usuario tenía sudo (o estaba en el grupo sudo),
+sin embargo yo no tenía la contraseña de `root`. Esto es por como viene configurado 
+ubuntu y [se explica acá](https://help.ubuntu.com/community/RootSudo). La idea es 
+que las "tareas administrativas" las haga un usuario que tenga sudo, como era mi caso,
+pero que la cuenta `root` no se usa. Pero se puede habilitar, teniendo `sudo`,
+simplemente cambiando la contraseña de `root`:
+
+```
+sudo passwd root
+```
+
+Pero para eso tengo que primero recuperar `sudo`.
+
 Entonces,
 [en resumen, siguiendo esto](https://askubuntu.com/questions/1229628/my-user-was-deleted-from-sudo-group)
 , lo que hice:
@@ -55,4 +68,6 @@ y listo.
 Vi después (recién mientras buscaba el post que askubuntu que cito
 arriba) 
 [otra que decía como cambiar la contraseña de root](https://www.solucionex.com/blog/recuperar-la-contrasena-de-root-en-ubuntu).
-No lo probé, pero lo pego acá para probar otro día a ver si funciona.
+No lo probé, pero lo pego acá para probar otro día a ver si funciona. En ese caso la idea sería
+cambiar directamente la contraseña de `root` para con ella agragar el usuario que quiera a
+`sudo` (con `adduser`).
