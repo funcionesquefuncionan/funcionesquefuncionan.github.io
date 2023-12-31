@@ -27,3 +27,7 @@ author = 'Peter Gassendi'
   name = "RSS"
   url = "https://funcionesquefuncionan.github.io/index.xml"
 
+[sitemap]
+    changeFreq = 'monthly'
+    filename = 'sitemap.xml'
+    priority = 0
