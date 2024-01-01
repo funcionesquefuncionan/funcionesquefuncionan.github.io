@@ -46,20 +46,20 @@ Lista, además, algunos puntos que le parece que vale la pena resaltar.
 Áreas problemáticas:
 1. **strings** sin restricciones de tamaño que pueden causar *overflows* en enteros,
 1. **reallocs**, en particular sin restricciones de tamaño y asociado a overflows de 32
-1. bits,
-1. copias de memoria y de strings, antecedidas de *malloc* 
+    bits,
+1. copias de memoria y de strings, antecedidas de *malloc* ,
 1. *strncpy* es en sí misma complicada por el
   [padding](https://en.cppreference.com/w/c/string/byte/strncpy) y porque puede generar
-  string que no terminen en null.
+  strings que no terminen en null.
 
 Para prevenir errores usan algunas funciones auxiliares que tiene en cuenta:
 1. restricciones generales de la longitud en las strings pasadas a la API de libcurl, así
    como limites para todas las creadas internamente.
 1. evitar reallocs usando buffers dinámicos (siempre es bueno evitar pedir memoria).
-1. de ser posible, usar un puntero (junto con el tamaño de la memoria apuntada) en ver de
-1  una copia. Si es necesario copiar, hacerlo cerca de chequear los border.
+1. de ser posible, usar un puntero (junto con el tamaño de la memoria apuntada) en vez de
+    una copia. Si es necesario copiar, hacerlo cerca de chequear los border.
 1. evitar *strncpy*. En la mayoría de los casos, es mejor devolver un error diciendo
-   *too long input* y usar en cambio *strcpy* co nel tamaño exacto. Idealmente, usar sólo
+   *too long input* y usar en cambio *strcpy* con el tamaño exacto. Idealmente, usar sólo
    un puntero con la longitud.
 
 
@@ -73,11 +73,12 @@ verosímil es que aparezcan proyectos nuevos que sean escritos en rust, pero no 
 reemplazo de todo lo que está en C o en C++, que no es poco e incluye por ejemplo, además
 de libcurl, la totalidad o gran parte del código de otros proyectos como el kernel de
 linux, git, cpython, numpy, vim, emacs, redis, nodejs, macos, windows, chrome, v8, qemu,
-ffmpega, texlive, openssl, gpg, ...
+ffmpeg, texlive, openssl, gpg, ...
 
-De este modo, proyectos escritos en lenguajes más modernos como rust, zig, go, etc., van
-a vivir apoyados en infraestructura desarrollada en C por un buen tiempo. Distinto
-sería si hubiese una necesidad real de reescribir todo. Cuando el proyecto GNU se propuso
-(también) en su momento reescribir todo era una necesidad para ellos ya que de otra forma
-no contaban con la infraestructura. Pero esto es muy distinto a volver a escribir todo en
+De este modo, proyectos escritos en lenguajes más modernos como rust, zig, go,
+etc., van a vivir apoyados en infraestructura desarrollada en C por un buen
+tiempo. Distinto sería si hubiese una necesidad real de reescribir todo. Cuando
+el proyecto GNU se propuso (también, por otros motivos) en su momento
+reescribir todo era una necesidad para ellos ya que de otra forma no contaban
+con la infraestructura. Pero esto es muy distinto a volver a escribir todo en
 rust, sería ir para atrás y no para adelante.
